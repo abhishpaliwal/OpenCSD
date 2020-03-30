@@ -27,7 +27,7 @@ Releases will appear on the master branch in the git repository with an appropri
 CoreSight Trace Component Support.
 ----------------------------------
 
-_Current Version 0.14.2_
+_Development Version 0.15.4_
 
 ### Current support:
 
@@ -141,6 +141,7 @@ Version and Modification Information
                     AutoFDO: update documentation for AutoFDO usage and add in "record.sh" script
 - _Version 0.9.3_:  Bugfix: Test snapshot library not handling 'offset' parameters in dump file sections.
                     Install: ocsd_if_version.h moved to opencsd/include to allow installation on OS & use in compiling client apps.
+
 - _Version 0.10.0_: 
     - __Updates__: Add additional information about the last instruction to the generic output packet.
     - __Docs__: update docs for updated output packet.
@@ -171,7 +172,7 @@ Version and Modification Information
     - __Update__: ETM v4: Bugfix & clarification on Exception trace handling. Where exception occurs at a branch target before any instructions
                   have been executed, the preferred return address is also the target address of the branch instruction. This case now includes as specific flag in
                   the packet. Additionally any context change associated with this target address was being applied incorrectly.
-    - _Update__: Core / Architecture mapping to core names as used by test programs / snapshots updated to include additional recent ARM cores.
+    - __Update__: Core / Architecture mapping to core names as used by test programs / snapshots updated to include additional recent ARM cores.
     - __Update__: Docs: Update to reflect new exception flag. Update test program example to reflect latest output.
     - __Bugfix__: ETM v4: Valid trace info packet was not handled correctly (0x01, 0x00).
     - __Bugfix__: ETM v4: Error messaging on commit stack overflow.
@@ -180,10 +181,9 @@ Version and Modification Information
     - __Update__: build: remove -g option from release build.
     - __Update__: tests: Snapshots can now use generic arch+profile names rather than core names, e.g. ARMv8-A
     - __Bugfix__: Instruction decode - v8.3 B[L]A{A|B}[Z] instructions mis-identified.
-     -__Bugfix__: Transition from A64 to A32 can be mis-decoded if the trace implementation represents the transition 
+    - __Bugfix__: Transition from A64 to A32 can be mis-decoded if the trace implementation represents the transition 
                   as an individual address packet followed by a context packet. 
-
-- _Version 0.12.2_:
+- _Version 0.12.2_: 
     - __Bugfix__: Clean up memory leaks.
     - __Bugfix__: ETMv4: Ensure addressing history zeroed after TINFO.
     - __Update__: Allow GCC version to be included in build output path.
@@ -203,7 +203,7 @@ Version and Modification Information
 - _Version 0.14.1_: 
     - __Update__: ETMv4 - Add support for Q elements.
     - __Bugfix__: build: fix logic issue for && operator. (github issue #23, sumitted by yabinc)
-
+                    
 - _Version 0.14.2_: 
     - __Update__: Architecture versioning. Set enum tag values to make conversion to numeric version easier.
     - __Update__: I-decode: remove global temporary decode state data and replace with local instance data
@@ -211,6 +211,9 @@ Version and Modification Information
     - __Bugfix__: I-decode: Some Thumb instructions not correctly reported as implied returns.
                   (github issue #24, submitted by kongy).
 
+- _Development Version 0.15.4_:
+	- __Update__: Add support for generic marker elements.
+    - __Update__: ETMv4 - add support for marker packet handling.
 
 Licence Information
 ===================
